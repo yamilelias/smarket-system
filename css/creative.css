@@ -1,6 +1,6 @@
 /*!
- * Start Bootstrap - Creative v3.3.7+1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
+ * Smarket - Arquitecture and Tecnology Solutions v0.0.1 (http://ats.mx)
+ * Copyright 2016 -2016 Yamil Elías
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 html,
@@ -163,6 +163,10 @@ aside {
   text-align: center;
   color: white;
 }
+#welcome img {
+  position: relative;
+  padding-top: 10%;
+}
 #welcome .title-content {
   position: relative;
   text-align: center;
@@ -222,9 +226,10 @@ aside {
 #content table {
   background: white;
   color: black;
-  font-size: 22px;
+  font-size: 20px;
   opacity: 0.65;
   text-transform: uppercase;
+  width: 100%;
 }
 .section-heading {
   margin-top: 0;
