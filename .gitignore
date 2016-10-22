@@ -48,3 +48,7 @@ Temporary Items
 
 # Ignore NodeJS files
 node_modules/
+
+# Ignore project configuration files
+webservice/nbproject
+webservice/.idea
