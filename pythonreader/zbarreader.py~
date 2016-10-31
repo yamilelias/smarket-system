@@ -29,7 +29,7 @@ def xmlwriter(data):
     adder.text = data
 
     # Save to the file
-    tree.write('../web/filename.xml')
+    tree.write('filename.xml')
     print ET.tostring(root)
 
 # setup a callback

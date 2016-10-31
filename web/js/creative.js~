@@ -135,8 +135,8 @@ function updatePrice(totalPrice){
 }
 
 function UpdateTable(){
-    while(0){
-    	var wait = 500;
+    while(1){
+    	var wait = 200;
     	setTimeout( function(){
 	     loadList();
     	}, wait);    
