@@ -64,14 +64,16 @@ def new_product():
 
         pusher.trigger('messages', 'new_message', {
             # Push them to server
-            'text': description,
-            'name': quantity,
-            'time': producttotal
+            'id': barcode,
+            'description': description,
+            'quantity': quantity,
+            'producttotal': producttotal
         })
 
         # Clear database results to fetch more next time
         comparator.clearResults()
         return "great success!"
+
 
 def compare(symbol):
     comparator.connectDatabase()

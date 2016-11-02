@@ -3,28 +3,19 @@ var WelcomeView = React.createClass({
     render: function () {
 
         var view;
-        var name = this.props.name;
+        var quantity = this.props.quantity;
+        if (this.props.quantity) var style = {display: 'none'};
 
-        if (name) {
+        if (quantity) {
             view = (
                 <div></div>
             )
         } else {
             view = (
-                /*<div style={{marginTop: '20px'}}>
-                    <p className="light white">Enter your Twitter name and start chatting!</p>
-                    <div style={{marginTop: '20px'}}>
-                        <input id="input-name" className="swish-input" style={{width: '350'}}
-                               onKeyPress={this.props._onName} placeholder="Enter Twitter ID here"/>
-                        <button className="bright-blue-hover btn-white" onClick={this.props._onClick} id="try-it-out">
-                            Try it out
-                        </button>
-                    </div>
-                </div>*/
                 <div id="page-top" onClick={this.props._onClick}>
                     <header id="welcome">
                         <div className="col-md-12">
-                            <img src="static/images/logo-walmart.png" alt="logo_walmart" />
+                            <img src="static/images/logo-walmart.png" alt="logo_walmart"/>
                         </div>
                         <div className="title-content">
                             <div className="col-md-6"></div>
@@ -37,16 +28,13 @@ var WelcomeView = React.createClass({
                         </div>
                     </header>
                 </div>
-
             )
         }
 
         return (
-            <section>
+            <section style={style} id="div">
                 {view}
             </section>
         )
-
     }
-
 });

@@ -1,33 +1,24 @@
 var Chat = React.createClass({
 
-  getInitialState: function() {
-    return {
-      name: null
-    };
-  },
+    getInitialState: function () {
+        return {
+            name: null
+        };
+    },
 
-  _onClick: function(){
-    // var input = document.getElementById('input-name');
-    // var name = input.value;
-    var name = "EliasYamil";
-    this.setState({name: name});
-  },
+    _onClick: function () {
+        var quantity = "EliasYamil";
+        this.setState({quantity: quantity});
+    },
 
-  /*_onName: function(e){
-    if (e.nativeEvent.keyCode != 13) return;
-    var name = e.target.value;
-    this.setState({name: name});
-  },*/
-
-  render: function() {
-    return (
-      <div>
-        <WelcomeView name={this.state.name} _onClick={this._onClick} _onName={this._onName} />
-        <MainView name={this.state.name} />
-      </div>
-    );
-  }
-
+    render: function () {
+        return (
+            <div>
+                <WelcomeView quantity={this.state.quantity} _onClick={this._onClick}/>
+                <MainView quantity={this.state.quantity}/>
+            </div>
+        );
+    }
 });
 
 React.render(<Chat />, document.getElementById('app'));
