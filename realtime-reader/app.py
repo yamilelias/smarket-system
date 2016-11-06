@@ -31,19 +31,6 @@ pusher = Pusher(
 def show_index():
     return render_template('index.html', pusher_app_key=key)
 
-
-@app.route('/messages', methods=['POST'])
-def new_message():
-    name, text = request.form['name'], cgi.escape(request.form['text'])
-    time = request.form['time']
-    pusher.trigger('messages', 'new_message', {
-        'text': text,
-        'name': name,
-        'time': time
-    })
-    return "great success!"
-
-
 @app.route('/barcode', methods=['POST'])
 def new_product():
     barcode = cgi.escape(request.form['data'])
@@ -67,7 +54,7 @@ def new_product():
         description = cartlist.getProduct(barcode).getDescription()
         total = cartlist.getTotal()
 
-        pusher.trigger('messages', 'new_message', {
+        pusher.trigger('data', 'new_product', {
             # Push them to server
             'key': key,
             'description': description,

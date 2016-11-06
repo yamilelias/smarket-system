@@ -1,15 +1,15 @@
 //import update from 'react-addons-update';
 
-var Messages = React.createClass({
+var Table = React.createClass({
 
     propTypes: {
-        messages: React.PropTypes.node.isRequired
+        data: React.PropTypes.node.isRequired
     },
 
     getInitialState: function () {
 
-        var messages = [];
-        messages = this.props.messages.map(function (msg) {
+        var data = [];
+        data = this.props.data.map(function (msg) {
             return {
                 key: msg.key,
                 quantity: msg.quantity,
@@ -20,7 +20,7 @@ var Messages = React.createClass({
         });
 
         return {
-            messages: messages
+            data: data
         };
     },
 
@@ -32,7 +32,7 @@ var Messages = React.createClass({
         var producttotal;
         var total;
 
-        var appender = this.props.messages.map(function (message) {
+        var appender = this.props.data.map(function (message) {
             key = message.key;
             quantity = message.quantity;
             description = message.description;

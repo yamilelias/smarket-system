@@ -3,8 +3,8 @@ var WelcomeView = React.createClass({
     render: function () {
 
         var view;
-        var quantity = this.props.quantity;
-        if (this.props.quantity) var style = {display: 'none'};
+        var quantity = this.props.valid;
+        if (this.props.valid) var style = {display: 'none'};
 
         if (quantity) {
             view = (

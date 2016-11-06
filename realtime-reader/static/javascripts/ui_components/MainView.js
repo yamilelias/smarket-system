@@ -2,8 +2,8 @@ var MainView = React.createClass({
 
     getInitialState: function () {
 
-        var messages = [];
-        messages = messages.map(function (msg) {
+        var data = [];
+        data = data.map(function (msg) {
             return {
                 key: 0,
                 quantity: '',
@@ -14,25 +14,25 @@ var MainView = React.createClass({
         });
 
         return {
-            messages: messages,
+            data: data,
         };
     },
 
     componentWillMount: function () {
 
         this.pusher = new Pusher(PUSHER_CHAT_APP_KEY);
-        this.chatRoom = this.pusher.subscribe('messages');
+        this.chatRoom = this.pusher.subscribe('data');
 
     },
 
     componentDidMount: function () {
-        this.chatRoom.bind('new_message', function (message) {
-            this.setState({messages: this.state.messages.concat(message)})
+        this.chatRoom.bind('new_product', function (message) {
+            this.setState({data: this.state.data.concat(message)})
         }, this);
     },
 
     render: function () {
-        if (!this.props.quantity) var style = {display: 'none'};
+        if (!this.props.valid) var style = {display: 'none'};
 
         var body = (
             <div>
@@ -52,7 +52,7 @@ var MainView = React.createClass({
                     </div>
                 </div>
                 <section id="content">
-                    <Messages messages={this.state.messages}/>
+                    <Table data={this.state.data}/>
                 </section>
             </div>
 
