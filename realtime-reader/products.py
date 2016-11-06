@@ -37,6 +37,7 @@ class Product(object):
 class List(object):
 
     productlist = None
+    total = 0
 
     def __init__(self, productList=None):
         if productList is None:
@@ -47,6 +48,7 @@ class List(object):
 
     def addProduct(self, product):
         self.productlist.append(product)
+        self.addToTotal(product.getPrice())
 
     def getProductsList(self):
         return self.productlist
@@ -66,3 +68,9 @@ class List(object):
 
         # Nothing was found
         return False
+
+    def addToTotal(self, productPrice):
+        self.total += productPrice
+
+    def getTotal(self):
+        return self.total

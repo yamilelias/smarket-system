@@ -7,7 +7,7 @@ var Chat = React.createClass({
     },
 
     _onClick: function () {
-        var quantity = "EliasYamil";
+        var quantity = "0";
         this.setState({quantity: quantity});
     },
 

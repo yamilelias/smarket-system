@@ -51,23 +51,29 @@ def new_product():
 
     if comparator.barcodeExist():
         if cartlist.checkIfAlreadyInList(barcode):
+            product = cartlist.getProduct(barcode)
+
             # If is in cart, add one more to list
-            cartlist.getProduct(barcode).oneMore()
+            product.oneMore()
+            cartlist.addToTotal(product.getPrice())
         else:
             newproduct = products.Product(barcode, comparator.getDescription(), comparator.getPrice())
             cartlist.addProduct(newproduct)
 
-        # Depending on quantity, set the price
+        # Set all the variables to be passed
+        key = int(barcode)
         quantity = cartlist.getProduct(barcode).getQuantity()
         producttotal = quantity * float(cartlist.getProduct(barcode).getPrice())
         description = cartlist.getProduct(barcode).getDescription()
+        total = cartlist.getTotal()
 
         pusher.trigger('messages', 'new_message', {
             # Push them to server
-            'id': barcode,
+            'key': key,
             'description': description,
             'quantity': quantity,
-            'producttotal': producttotal
+            'producttotal': producttotal,
+            'total': total
         })
 
         # Clear database results to fetch more next time

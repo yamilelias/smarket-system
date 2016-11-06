@@ -5,14 +5,16 @@ var MainView = React.createClass({
         var messages = [];
         messages = messages.map(function (msg) {
             return {
+                key: 0,
                 quantity: '',
                 producttotal: '',
-                description: ''
+                description: '',
+                total: 0
             }
         });
 
         return {
-            messages: messages
+            messages: messages,
         };
     },
 
@@ -50,17 +52,7 @@ var MainView = React.createClass({
                     </div>
                 </div>
                 <section id="content">
-                    <div className="data">
-                        <div className="col-md-6">
-                            <Messages messages={this.state.messages}/>
-                        </div>
-                        <div className="col-md-6 col-centered">
-                            <div className="row"><p id="total">$</p></div>
-                            <div className="row">
-                                <button href="#" className="btn btn-default btn-lg">Pagar</button>
-                            </div>
-                        </div>
-                    </div>
+                    <Messages messages={this.state.messages}/>
                 </section>
             </div>
 

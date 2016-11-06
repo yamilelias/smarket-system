@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/realtime-reader.iml" filepath="$PROJECT_DIR$/.idea/realtime-reader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/realtime-smarket.iml" filepath="$PROJECT_DIR$/.idea/realtime-smarket.iml" />
     </modules>
   </component>
 </project>
