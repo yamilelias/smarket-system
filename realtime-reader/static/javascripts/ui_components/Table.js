@@ -50,12 +50,14 @@ var Table = React.createClass({
                             <th>Precio</th>
                         </thead>
                         <tbody>
-                            <Product key={key} quantity={quantity} producttotal={producttotal} description={description}/>
+                            {this.props.data.map((data) =>
+                                <Product key={data.key} quantity={data.quantity} producttotal={data.producttotal} description={data.description}/>
+                            )}
                         </tbody>
                     </table>
                 </div>
                 <div className="col-md-6 col-centered">
-                    <div className="row">$<Total key={total} total={total} /></div>
+                    <div className="row"><Total key={total} total={total} /></div>
                     <div className="row">
                         <button href="#" className="btn btn-default btn-lg">Pagar</button>
                     </div>

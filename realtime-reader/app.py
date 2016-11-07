@@ -48,7 +48,7 @@ def new_product():
             cartlist.addProduct(newproduct)
 
         # Set all the variables to be passed
-        key = int(barcode)
+        key = barcode
         quantity = cartlist.getProduct(barcode).getQuantity()
         producttotal = quantity * float(cartlist.getProduct(barcode).getPrice())
         description = cartlist.getProduct(barcode).getDescription()

@@ -5,7 +5,7 @@
 var Product = React.createClass({
     render: function () {
         return (
-            <tr id={this.props.key}>
+            <tr>
                 <td>{this.props.quantity}</td>
                 <td>{this.props.description}</td>
                 <td>{this.props.producttotal}</td>
@@ -15,9 +15,15 @@ var Product = React.createClass({
 });
 
 var Total = React.createClass({
+    getDefaultProps: function() {
+        return{
+            total: 0
+        };
+    },
+
     render: function(){
         return (
-            <div>{this.props.total}</div>
+            <div>${this.props.total}</div>
         )
     }
 });
