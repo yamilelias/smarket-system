@@ -3,12 +3,51 @@
  */
 
 var Product = React.createClass({
+
+    propTypes: {
+        quantity: React.PropTypes.number.isRequired,
+        description: React.PropTypes.string.isRequired,
+        producttotal: React.PropTypes.number.isRequired
+    },
+
+    /*componentWillMount: function () {
+        this.setState({
+            quantity: this.props.quantity,
+            description: this.props.description,
+            producttotal: this.props.producttotal
+        });
+    },*/
+
+    /*componentDidUpdate: function (prevProps, prevState) {
+        this.setState((prevState, props) => {
+            return {quantity: prevState.quantity + 1};
+        });
+        //return {quantity: prevState.quantity + 1};
+    },*/
+
+    componentWillReceiveProps: function (nextProps) {
+        console.log("State: " + this.state.quantity + ", nextProps: " + nextProps.quantity);
+        if(this.state.quantity == nextProps.quantity){
+            this.setState({
+                quantity: this.state.quantity + 1
+            });
+        }
+    },
+
+    getInitialState: function () {
+        return{
+            quantity: this.props.quantity,
+            description: this.props.description,
+            producttotal: this.props.producttotal
+        };
+    },
+
     render: function () {
         return (
             <tr>
-                <td>{this.props.quantity}</td>
-                <td>{this.props.description}</td>
-                <td>{this.props.producttotal}</td>
+                <td>{this.state.quantity}</td>
+                <td>{this.state.description}</td>
+                <td>{this.state.producttotal}</td>
             </tr>
         )
     }

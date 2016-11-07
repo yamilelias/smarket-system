@@ -7,7 +7,7 @@ var Smarket = React.createClass({
     },
 
     _onClick: function () {
-        var valid = "0";
+        var valid = "1";
         this.setState({valid: valid});
     },
 

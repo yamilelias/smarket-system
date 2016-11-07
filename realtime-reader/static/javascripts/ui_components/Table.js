@@ -6,23 +6,30 @@ var Table = React.createClass({
         data: React.PropTypes.node.isRequired
     },
 
-    getInitialState: function () {
+    /*getInitialState: function () {
 
         var data = [];
-        data = this.props.data.map(function (msg) {
+        data = this.props.data.map(function (data) {
             return {
-                key: msg.key,
-                quantity: msg.quantity,
-                producttotal: msg.producttotal,
-                description: msg.description,
-                total: msg.total
+                key: data.key,
+                quantity: data.quantity,
+                producttotal: data.producttotal,
+                description: data.description,
+                total: data.total
             }
         });
 
         return {
-            data: data
+            data: data,
         };
     },
+
+    componentWillReceiveProps: function (nextProps) {
+        var propsKey = nextProps.key;
+        if(!isInArray(propsKey)){
+
+        }
+    },*/
 
     render: function () {
 
@@ -65,5 +72,9 @@ var Table = React.createClass({
             </div>
         );
     }
-
 });
+
+// Function to find in an array
+function isInArray(array, obj){
+    return(array.indexOf(obj) != -1);
+}
