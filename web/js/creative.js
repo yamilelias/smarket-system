@@ -62,3 +62,86 @@
     });
 
 })(jQuery); // End of use strict
+
+// Global Values
+var total_p1 = 0.00;
+var total_p2 = 0.00;
+var total_p3 = 0.00;
+
+// This is for ajax updater
+function loadList(){
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	    updateList(this);
+        }
+    };
+    xmlhttp.open("GET", "filename.xml", true);
+    xmlhttp.send();
+}
+function updateList(xml){
+    var xmlDoc = xml.responseXML;
+    var xmlLength = xmlDoc.getElementsByTagName("product");
+    var i;
+    var total = 0.00;
+
+    for (i = 0; i<xmlLength.length; i++){
+	var values = xmlDoc.getElementsByTagName("product")[i].childNodes[0].nodeValue;
+	total = total + addProducts(values);
+    }
+
+    updatePrice(total);
+}
+
+function addProducts(value){
+    var p1 = "122016697675";
+    var p2 = "128016691675";
+    var p3 = "671860013525";
+    var total = 0.00;
+
+    var products = [p1, p2, p3];
+
+    if(value == products[0]){
+	if (total_p1 === undefined) {
+    	    total_p1 = 1.00;
+        }
+    	doc = document.getElementById('table');
+	var total_product = total_p1 * 28.95; 
+	doc.insertAdjacentHTML('beforeend', '<tr><td>'+ total_p1 +'</td><td>Kleenex Neutro 100</td><td>$'+ total_product +'</td></tr>');
+	return total_product;
+    } else if(value == products[1]){
+	if (total_p2 === undefined) {
+    	    total_p2 = 1.00;
+    	}
+    	doc = document.getElementById('table');
+	var total_product = total_p2 * 37.15;
+	doc.insertAdjacentHTML('beforeend', '<tr><td>'+ total_p2 +'</td><td>Lomo de Atún Tuny</td><td>$'+ total_product +'</td></tr>');
+	return total_product;
+    } else if(value == products[2]){
+	if (total_p3 === undefined) {
+    	    total_p3 = 1.00;
+    	}
+    	doc = document.getElementById('table');
+	var total_product = total_p3 * 65.25; 
+	doc.insertAdjacentHTML('beforeend', '<tr><td>'+ total_p2 +'</td><td>Café Soluble Nescafé</td><td>$'+ total_product +'</td></tr>');
+	return total_product;
+    }
+ 
+    
+}
+
+function updatePrice(totalPrice){
+    document.getElementById("total").value = totalPrice;
+}
+
+function UpdateTable(){
+    while(0){
+    	var wait = 500;
+    	setTimeout( function(){
+	     loadList();
+    	}, wait);    
+    }
+
+}
+
+

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>SMARKET</title>
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic'
+          rel='stylesheet' type='text/css'>
+    <link href="/static/stylesheets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/css/creative.css">
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/static/stylesheets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
+    <script>
+        Pusher.log = function (msg) {
+            console.log(msg);
+        };
+        var PUSHER_CHAT_APP_KEY = '{{ pusher_app_key }}';
+    </script>
+    <script src="/static/javascripts/ui_components/Product.js" type="text/jsx"></script>
+    <script src="/static/javascripts/ui_components/Table.js" type="text/jsx"></script>
+    <script src="/static/javascripts/ui_components/WelcomeView.js" type="text/jsx"></script>
+    <script src="/static/javascripts/ui_components/MainView.js" type="text/jsx"></script>
+    <script src="/static/javascripts/ui_components/Smarket.js" type="text/jsx"></script>
+</head>
+<body>
+<!-- All the magic is here -->
+<div id="app"></div>
+</body>
+</html>

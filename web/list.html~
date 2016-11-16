@@ -54,7 +54,7 @@
 			<i class="fa fa-bookmark" aria-hidden="true"></i>
 			<i class="fa fa-question-circle" aria-hidden="true"></i>
 		    </div>
-		    <div>
+		    <div class="text">
 		        <span>Buscar</span>
 		        <span>Ofertas</span>
 		        <span>Ayuda</span>
@@ -62,53 +62,22 @@
 		</div>
 	</div>
     <section id="content">
-
-        <div class="col-md-6">
-            <table class="table">
-              <tr>
-                <th>Cantidad</th>
-                <th>Descripción</th> 
-                <th>Precio (u)</th>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Kleenex Neutro 100</td> 
-                <td>$28.95</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Sopa Fideo Knorr</td> 
-                <td>$8.90</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Café Soluble Nescafé</td> 
-                <td>$16.90</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Tortillas Tía Rosa</td> 
-                <td>$13.50</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Pan Blanco Bimbo Mediano</td> 
-                <td>$24.00</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Lomo de Atún Tuny</td> 
-                <td>$22.90</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Catsup Heinz 680 g</td> 
-                <td>$19.90</td>
-              </tr>
-            </table>
-        </div>
-        <div class="col-md-6">
-
+        <div class="data">
+            <div class="col-md-6">
+                <table id="table" class="table" onload="UpdateTable()">
+                  <tr>
+                    <th>Cantidad</th>
+                    <th>Descripción</th> 
+                    <th>Precio (u)</th>
+                  </tr>
+                </table>
+            </div>
+            <div class="col-md-6 ">
+            <!--<p>Walmart</p>
+            <p>Total</p>-->
+            <div class="row"><input type="text" name="total" id="total"></input></div>
+            <div class="row"><button href="#" class="btn btn-default btn-lg">Pagar</button></div>
+            </div>
         </div>
     </section>
 
