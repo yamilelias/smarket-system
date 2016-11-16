@@ -52,7 +52,7 @@ def new_product():
         quantity = cartlist.getProduct(barcode).getQuantity()
         producttotal = quantity * float(cartlist.getProduct(barcode).getPrice())
         description = cartlist.getProduct(barcode).getDescription()
-        total = cartlist.getTotal()
+        total = round(cartlist.getTotal(), 2) # Round 2 digits
 
         pusher.trigger('data', 'new_product', {
             # Push them to server

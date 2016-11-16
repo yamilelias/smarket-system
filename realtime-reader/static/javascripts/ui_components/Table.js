@@ -6,16 +6,16 @@ var Table = React.createClass({
         data: React.PropTypes.node.isRequired
     },
 
-    /*getInitialState: function () {
+    getInitialState: function () {
 
         var data = [];
-        data = this.props.data.map(function (data) {
+        data = data.map(function (msg) {
             return {
-                key: data.key,
-                quantity: data.quantity,
-                producttotal: data.producttotal,
-                description: data.description,
-                total: data.total
+                key: "666",
+                quantity: 69,
+                producttotal: 123456,
+                description: "Do babes al menos entró",
+                total: 666
             }
         });
 
@@ -24,12 +24,40 @@ var Table = React.createClass({
         };
     },
 
-    componentWillReceiveProps: function (nextProps) {
-        var propsKey = nextProps.key;
-        if(!isInArray(propsKey)){
-
-        }
+    /*componentDidUpdate: function (prevProps, prevState) {
+        this.setState({
+            key: this.props.data.key,
+            quantity: this.props.data.quantity,
+            producttotal: this.props.data.producttotal,
+            description: this.props.data.description,
+            total: this.props.data.total
+        });
     },*/
+
+    componentWillReceiveProps: function (nextProps) {
+        var key;
+        var quantity;
+        var description;
+        var producttotal;
+        var total;
+
+        var appender = nextProps.data.map(function (message) {
+            key = message.key;
+            quantity = message.quantity;
+            description = message.description;
+            producttotal = message.producttotal;
+            total = message.total;
+        });
+
+        this.setState({ data: {
+                key: key,
+                quantity: quantity,
+                producttotal: producttotal,
+                description: description,
+                total: total
+            }
+        });
+    },
 
     render: function () {
 
@@ -57,9 +85,9 @@ var Table = React.createClass({
                             <th>Precio</th>
                         </thead>
                         <tbody>
-                            {this.props.data.map((data) =>
-                                <Product key={data.key} quantity={data.quantity} producttotal={data.producttotal} description={data.description}/>
-                            )}
+                            { // Temporary solution
+                                this.props.data.map((data) =>
+                               <Product key={data.key} quantity={data.quantity} producttotal={data.producttotal} description={data.description}/>)}
                         </tbody>
                     </table>
                 </div>
@@ -73,8 +101,3 @@ var Table = React.createClass({
         );
     }
 });
-
-// Function to find in an array
-function isInArray(array, obj){
-    return(array.indexOf(obj) != -1);
-}

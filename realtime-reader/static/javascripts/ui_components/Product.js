@@ -26,7 +26,14 @@ var Product = React.createClass({
     },*/
 
     componentWillReceiveProps: function (nextProps) {
-        console.log("State: " + this.state.quantity + ", nextProps: " + nextProps.quantity);
+        console.log("Description: " + nextProps.description + ", Quantity: " + nextProps.quantity + ", Product Total: " + nextProps.producttotal);
+        /*this.setState({
+            quantity: nextProps.quantity,
+            description: nextProps.description,
+            producttotal: nextProps.producttotal
+        });*/
+
+        // Temporal solution
         if(this.state.quantity == nextProps.quantity){
             this.setState({
                 quantity: this.state.quantity + 1
