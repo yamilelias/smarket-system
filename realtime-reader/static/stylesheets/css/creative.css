@@ -1,7 +1,7 @@
 /*!
- * Smarket - Arquitecture and Tecnology Solutions v0.0.1 (http://ats.mx)
+ * Smarket - Smarket System v0.0.1 (http://yamilelias.github.io/)
  * Copyright 2016 -2016 Yamil Elías
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ * Licensed under MIT (https://github.com/yamilelias/smarket-system/web/LICENSE)
  */
 html,
 body {
@@ -13,11 +13,11 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  background-image: url('/static/images/header.jpg');
+  background-image: url('../img/header.jpg');
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
-  border-color: #0E22B3;
+  border-color: #2788D2;
   border-width: 3px;
   max-width: 50px;
 }
@@ -28,11 +28,11 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #0E22B3;
+  color: #2788D2;
 }
 a:hover,
 a:focus {
-  color: #0a1984;
+  color: #1f6ca7;
 }
 h1,
 h2,
@@ -48,7 +48,7 @@ p {
   margin-bottom: 20px;
 }
 .bg-primary {
-  background-color: #0E22B3;
+  background-color: #2788D2;
 }
 .bg-dark {
   background-color: #222222;
@@ -75,14 +75,14 @@ aside {
   transition: all 0.35s;
 }
 .navbar-default .navbar-header .navbar-brand {
-  color: #0E22B3;
+  color: #2788D2;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-  color: #0a1984;
+  color: #1f6ca7;
 }
 .navbar-default .navbar-header .navbar-toggle {
   font-weight: 700;
@@ -99,11 +99,11 @@ aside {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #0E22B3;
+  color: #2788D2;
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #0E22B3 !important;
+  color: #2788D2 !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active > a:hover,
@@ -135,12 +135,12 @@ aside {
     border-color: rgba(34, 34, 34, 0.05);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: #0E22B3;
+    color: #2788D2;
     font-size: 14px;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #0a1984;
+    color: #1f6ca7;
   }
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
@@ -148,7 +148,7 @@ aside {
   }
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #0E22B3;
+    color: #2788D2;
   }
 }
 #welcome {
@@ -230,20 +230,26 @@ aside {
   font-size: 60px;
   padding-right: 40px;
 }
-#list-view .menu-help .text span {
+#list-view .menu-help span {
   font-size: 20px !important;
+  margin: auto;
   padding-right: 20px;
 }
-#list-view #content .data {
-  padding-top: 30px;
-}
-#list-view #content .data table {
+#list-view #content table {
   background: white;
   color: black;
   font-size: 20px;
   opacity: 0.65;
   text-transform: uppercase;
   width: 100%;
+}
+#list-view #content .payment {
+  text-align: center;
+  margin: auto;
+}
+#list-view #content .payment .total-price {
+  color: white;
+  font-size: 60px;
 }
 .section-heading {
   margin-top: 0;
@@ -270,7 +276,7 @@ aside {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(14, 34, 179, 0.9);
+  background: rgba(39, 136, 210, 0.9);
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -318,7 +324,7 @@ aside {
   margin: 0 auto 20px;
 }
 .text-primary {
-  color: #0E22B3;
+  color: #2788D2;
 }
 .no-gutter > [class*='col-'] {
   padding-right: 0;
@@ -374,8 +380,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: white;
-  background-color: #0E22B3;
-  border-color: #0E22B3;
+  background-color: #2788D2;
+  border-color: #2788D2;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -387,8 +393,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #0c1e9b;
-  border-color: #0b1c92;
+  background-color: #237abc;
+  border-color: #2175b4;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -413,11 +419,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #0E22B3;
-  border-color: #0E22B3;
+  background-color: #2788D2;
+  border-color: #2788D2;
 }
 .btn-primary .badge {
-  color: #0E22B3;
+  color: #2788D2;
   background-color: white;
 }
 .btn {

@@ -91,7 +91,7 @@ var Table = React.createClass({
                         </tbody>
                     </table>
                 </div>
-                <div className="col-md-6 col-centered">
+                <div className="col-md-6 payment">
                     <div className="row"><Total key={total} total={total} /></div>
                     <div className="row">
                         <button href="#" className="btn btn-default btn-lg">Pagar</button>

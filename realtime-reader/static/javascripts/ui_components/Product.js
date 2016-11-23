@@ -69,7 +69,7 @@ var Total = React.createClass({
 
     render: function(){
         return (
-            <div>${this.props.total}</div>
+            <div className="total-price">${this.props.total}</div>
         )
     }
 });

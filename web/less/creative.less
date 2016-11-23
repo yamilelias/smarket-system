@@ -234,24 +234,36 @@ aside {
     .menu-help{
         color: white;
 	
-	& .icons{
-	   i{
-	      font-size: 60px;
-	      padding-right: 40px;	
-	   }
-	& .text{
-	   span{
-	      font-size: 20px !important;
-	   }
-	}
+    	& .icons{
+    	    i{
+    	        font-size: 60px;
+    	        padding-right: 40px;	
+    	    }
+        }
+	& span{
+            font-size: 20px !important;
+            margin: auto;
+	    padding-right: 20px;
+        }
     }
-    table{
-        background: white;
-        color: black;
-        font-size: 20px;
-        opacity: 0.65;
-        text-transform: uppercase;
-        width: 100%;
+    #content{
+        table{
+            background: white;
+            color: black;
+            font-size: 20px;
+            opacity: 0.65;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        & .payment{
+            text-align: center;
+            margin: auto; // Ok?
+
+            & .total-price{
+                color: white;
+                font-size: 60px;
+            }
+        }
     }
 }
 

@@ -235,29 +235,33 @@ aside {
         color: white;
 	
     	& .icons{
-    	   i{
-    	      font-size: 60px;
-    	      padding-right: 40px;	
-    	   }
+    	    i{
+    	        font-size: 60px;
+    	        padding-right: 40px;	
+    	    }
         }
-    	& .text{
-    	   span{
-    	      font-size: 20px !important;
-              padding-right: 20px;
-    	   }
-    	}
+	& span{
+            font-size: 20px !important;
+            margin: auto;
+	    padding-right: 20px;
+        }
     }
-
     #content{
-        .data{
-            padding-top: 30px;
-            table{
-                background: white;
-                color: black;
-                font-size: 20px;
-                opacity: 0.65;
-                text-transform: uppercase;
-                width: 100%;
+        table{
+            background: white;
+            color: black;
+            font-size: 20px;
+            opacity: 0.65;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        & .payment{
+            text-align: center;
+            margin: auto; // Ok?
+
+            & .total-price{
+                color: white;
+                font-size: 60px;
             }
         }
     }
